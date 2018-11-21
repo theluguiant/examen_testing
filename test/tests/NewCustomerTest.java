@@ -38,18 +38,18 @@ public class NewCustomerTest {
         driver.get("http://demo.guru99.com/V4/");
     }
     
-//    @After
-//    public void tearDown(){
-//        driver.quit();
-//    }
-//    
+    @After
+    public void tearDown(){
+        driver.quit();
+    }
+    
     @Test
     public void test_Agregar_Correctamente() {
         
         String loginPageTitle = objLogin.getLoginTitle();
         Assert.assertTrue(loginPageTitle.toLowerCase().contains("guru99 bank"));
-        objLogin.login("mgr123", "mgr!23");
-        Assert.assertTrue(objHomePage.getHomePageDashboardUserName().toLowerCase().contains("manger id : mgr123"));
+        objLogin.login("mngr160882", "baragAp");
+        Assert.assertTrue(objHomePage.getHomePageDashboardUserName().toLowerCase().contains("manger id : mngr160882"));
         objNewCustomer.NewCustomerClass("yoddi", "male", "27/06/1992", "cra69805", "Medellin", "Antioquia", "123456", "123456789", "yoa@gmail.com", "654321");
     }
 }

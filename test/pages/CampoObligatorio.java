@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class CampoObligatorio {
 
     WebDriver driver; //objeto driver para la pantalla
+    
     By customerNew = By.linkText("New Customer");
     By nameCustomer = By.name("name");
     By gender = By.name("rad1");
