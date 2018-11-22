@@ -48,7 +48,7 @@ public class LoginTest {
         Assert.assertTrue(loginPageTitle.toLowerCase().contains("guru99 bank"));
         //login to application
         objLogin.login("mngr160882", "baragAp");
-        // go the next page
+
         objHomePage = new HomePage(driver);
         //Verify home page
         Assert.assertTrue(objHomePage.getHomePageDashboardUserName().toLowerCase().contains("manger id : mngr160882"));
