@@ -37,7 +37,6 @@ public class DeleteCustomer {
      */
     //metodo que se usa en todos los casos de pruebas donde se necesite el login
     public void DeleteCustomerClass(String strCustomerId) {
-
         this.clickDeleteCustomer();
         this.setCustomerId(strCustomerId);
         this.clickSubmit();
