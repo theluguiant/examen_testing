@@ -52,6 +52,7 @@ public class CampoObligatorioTest {
         Assert.assertTrue(objHomePage.getHomePageDashboardUserName().toLowerCase().contains("manger id : mngr160882"));
         objCampoObligatorio.CampoObligatorioClass("");
         String Validacion = objCampoObligatorio.getMensajeObl();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         Assert.assertFalse(objCampoObligatorio.getMensajeObl().toLowerCase().contains("Customer name must not be blank"));
     }
 }
