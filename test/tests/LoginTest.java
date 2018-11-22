@@ -17,7 +17,7 @@ import pages.Login;
 
 public class LoginTest {
 
-    //objetos
+    //objetos de login
     static WebDriver driver;
     Login objLogin;
     HomePage objHomePage;
