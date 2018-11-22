@@ -42,7 +42,7 @@ public class NewCustomerTest {
     
     @After
     public void tearDown(){
-        //driver.quit();
+      // driver.quit();
     }
     
     @Test
@@ -65,6 +65,8 @@ public class NewCustomerTest {
                 values.getSaltNumbers());
         
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        String msn = driver.findElement(By.className("heading3")).getText();
+        Assert.assertTrue(msn.contains("Customer Registered Successfully!!!"));
         //Guarda la id en xml
         values.createXml(objNewCustomer.getCustomerId());
         

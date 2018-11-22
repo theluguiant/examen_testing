@@ -56,10 +56,11 @@ public class DeleteCustomerTest {
         driver.get("http://demo.guru99.com/V4/");
     }
 
-//    @After
-//    public void tearDown(){
-//        driver.quit();
-//    }
+    @After
+    public void tearDown(){
+        driver.quit();
+    }
+
     @Test
     public void test_DeleteCustomer() throws ParserConfigurationException, SAXException, IOException {
 
