@@ -15,6 +15,7 @@ import org.junit.Assert;
 import pages.HomePage;
 import pages.Login;
 import pages.NewCustomer;
+import pages.UtiilsData;
 
 public class NewCustomerTest {
 
@@ -25,6 +26,7 @@ public class NewCustomerTest {
     Login objLogin = new Login(driver);
     HomePage objHomePage = new HomePage(driver); 
     NewCustomer objNewCustomer = new NewCustomer(driver); 
+    UtiilsData values = new UtiilsData();
     
     @BeforeClass
     public static void setUpClass() {
@@ -40,7 +42,7 @@ public class NewCustomerTest {
     
     @After
     public void tearDown(){
-        driver.quit();
+        //driver.quit();
     }
     
     @Test
@@ -50,6 +52,22 @@ public class NewCustomerTest {
         Assert.assertTrue(loginPageTitle.toLowerCase().contains("guru99 bank"));
         objLogin.login("mngr160882", "baragAp");
         Assert.assertTrue(objHomePage.getHomePageDashboardUserName().toLowerCase().contains("manger id : mngr160882"));
-        objNewCustomer.NewCustomerClass("yoddi", "male", "27/06/1992", "cra69805", "Medellin", "Antioquia", "123456", "123456789", "yoa@gmail.com", "654321");
+        objNewCustomer.NewCustomerClass(
+                values.getSaltString(), 
+                "male", 
+                "27/06/1992", 
+                "cra69805", 
+                "Medellin", 
+                "Antioquia", 
+                values.getSaltNumbers(), 
+                values.getSaltNumbers(),
+                values.getSaltString()+ "@gmail.com",
+                values.getSaltNumbers());
+        
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //Guarda la id en xml
+        values.createXml(objNewCustomer.getCustomerId());
+        
+        
     }
 }

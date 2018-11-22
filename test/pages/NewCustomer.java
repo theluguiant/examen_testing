@@ -21,6 +21,8 @@ public class NewCustomer {
     By eMail = By.name("emailid");
     By password_ = By.name("password");
     By submitButton = By.name("sub");
+    By customerId = By.xpath("//*[@id=\"customer\"]/tbody/tr[4]/td[2]");
+    //By customerId = By.xpath("//table//tr[@id=\"customer\"]");
 
     //Constructor que recibe el objeto driver
     public NewCustomer(WebDriver driver) {
@@ -78,6 +80,10 @@ public class NewCustomer {
     
     public String getNewCustomerTitle(){
      return    driver.findElement(titleText).getText();
+    }
+    
+    public String getCustomerId(){
+     return driver.findElement(customerId).getText();
     }
     
     /**
