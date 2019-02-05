@@ -8,10 +8,10 @@ public class Login {
     WebDriver driver; //objeto driver para la pantalla
     
     //Elementos de la pantalla
-    By titleText = By.className("barone");
-    By userName = By.name("uid");
+    By titleText = By.xpath("/html/body/div/form[1]/div[1]/h2");
+    By userName = By.name("email");
     By password = By.name("password");
-    By login = By.name("btnLogin");
+    By login = By.xpath("/html/body/div/form[1]/button");
 
     //Constructor que recibe el objeto driver
     public Login(WebDriver driver){

@@ -10,7 +10,7 @@ public class HomePage {
 
     //Nota: Tener en cuenta que cuando utilizamos xpath o selector es mejor por práctica construirlos manualmente
     //ya que si lo obtenemos de la página, estos pueden cambiar en cualquier momento y dañarnos el script.
-    By homePageUserName = By.xpath("//table//tr[@class='heading3']");
+    By homePageUserName = By.xpath("//*[@id=\"social-sidebar-menu\"]/li/a/strong");
 
     //Constructr
     public HomePage(WebDriver driver){

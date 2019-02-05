@@ -14,13 +14,16 @@ import org.junit.Test;
 import org.junit.Assert;
 import pages.HomePage;
 import pages.Login;
+import pages.Car;
 
-public class LoginTest {
+public class CarTest {
 
     //objetos de login
     static WebDriver driver;
     Login objLogin;
     HomePage objHomePage;
+    Car objCar;
+    
 
     @BeforeClass
     public static void setUpClass() {
@@ -31,24 +34,27 @@ public class LoginTest {
 
     @Before
     public void setUp() {
-        driver.get("http://demo.guru99.com/V4/");
+        driver.get("https://www.phptravels.net/admin");
     }
     
-    @After
-    public void tearDown(){
-        driver.quit();
-    }
-
     @Test
-    public void test_Home_Page_Appear_Correct() {
-
+    public void Create_car() {
         objLogin = new Login(driver);
+        objCar = new Car(driver);
         String loginPageTitle = objLogin.getLoginTitle();
-        Assert.assertTrue(loginPageTitle.toLowerCase().contains("guru99 bank"));
-        objLogin.login("mngr160882", "baragAp");
-        objHomePage = new HomePage(driver);
-        Assert.assertTrue(objHomePage.getHomePageDashboardUserName().toLowerCase().contains("manger id : mngr160882"));
+        objLogin.login("admin@phptravels.com", "demoadmin");
+        driver.get("https://www.phptravels.net/admin/cars");
 
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        
+        objCar.clicAddBtn();
+        objCar.setCarName("testCars");
+        objCar.selectOptionPassangers("6");
+        objCar.selectOptionStatus("Disabled");
+        objCar.clickTypeContent();
+        objCar.clickTypeSelect();
+        
+        
     }
 
 }
